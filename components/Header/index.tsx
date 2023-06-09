@@ -17,17 +17,17 @@ export default function Header() {
           </Link>
         </div>
         <div className={s.menu}>
-          <Link className={s.tab} href={"/"}>
+          <Link className={s.tab} href={"/about"}>
             About
           </Link>
         </div>
         <div className={s.menu}>
-          <Link className={s.tab} href={"/"}>
+          <Link className={s.tab} href={"/projects"}>
             Projects
           </Link>
         </div>
         <div className={s.menu}>
-          <Link className={s.tab} href={"/"}>
+          <Link className={s.tab} href={"/contact"}>
             Contact
           </Link>
         </div>
