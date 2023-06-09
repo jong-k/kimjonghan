@@ -6,7 +6,7 @@
   height: 100vh;
 
   h2:nth-child(1) {
-    margin: 4rem 0 0.5rem 0;
+    margin: 3rem 0 0.5rem 0;
   }
 
   h2:nth-child(2) {
@@ -30,7 +30,7 @@
 }
 
 .navContainer {
-  margin: 4rem 0;
+  margin: 3rem 0;
 
   div:nth-child(1) {
     border-top: 0.25px solid v.$white;
@@ -48,6 +48,6 @@
 .tab {
   font-weight: 100;
   color: v.$white;
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   letter-spacing: 0.05rem;
 }
