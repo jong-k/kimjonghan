@@ -1,3 +1,4 @@
+# 프로그래머스 행렬의 곱셈
 def solution(arr1, arr2):
     answer = []
     for i in range(len(arr1)):
