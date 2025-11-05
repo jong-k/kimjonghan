@@ -29,6 +29,12 @@ const eslintConfig = defineConfig([
   sonarConfigs.recommended,
   ...tsconfigs.recommended,
   eslintPluginPrettierRecommended,
+  {
+    files: ["src/shared/shadcn-ui/**"],
+    rules: {
+      "unicorn/prevent-abbreviations": "off",
+    },
+  },
   globalIgnores([".next/**", "out/**", "build/**", "next-env.d.ts"]),
 ]);
 
