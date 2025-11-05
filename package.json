@@ -16,6 +16,7 @@
   "license": "ISC",
   "packageManager": "pnpm@10.18.2",
   "dependencies": {
+    "@gsap/react": "^2.1.2",
     "@radix-ui/react-separator": "^1.1.8",
     "@tailwindcss/postcss": "^4.1.16",
     "class-variance-authority": "^0.7.1",
