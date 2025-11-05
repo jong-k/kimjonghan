@@ -1,7 +1,9 @@
 @theme inline {
   --height-top-banner: var(--top-banner-height);
+  --height-navbar: var(--navbar-height);
 }
 
 :root {
   --top-banner-height: 50px;
+  --navbar-height: 90px;
 }

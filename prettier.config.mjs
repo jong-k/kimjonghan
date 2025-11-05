@@ -16,9 +16,6 @@ const config = {
   quoteProps: "as-needed",
   semi: true,
   singleQuote: false,
-
-
-  
   tabWidth: 2,
   tailwindStylesheet: "./src/styles/globals.css",
   trailingComma: "es5",
