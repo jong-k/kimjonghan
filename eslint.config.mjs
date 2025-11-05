@@ -30,7 +30,6 @@ const eslintConfig = defineConfig([
   ...tsconfigs.recommended,
   eslintPluginPrettierRecommended,
   {
-    files: ["src/shared/shadcn-ui/**"],
     rules: {
       "unicorn/prevent-abbreviations": "off",
     },

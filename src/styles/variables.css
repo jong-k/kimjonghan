@@ -1,0 +1,7 @@
+@theme inline {
+  --height-top-header: var(--top-header-height);
+}
+
+:root {
+  --top-header-height: 50px;
+}
