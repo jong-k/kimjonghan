@@ -1,7 +1,7 @@
 @theme inline {
-  --height-top-header: var(--top-header-height);
+  --height-top-banner: var(--top-banner-height);
 }
 
 :root {
-  --top-header-height: 50px;
+  --top-banner-height: 50px;
 }
