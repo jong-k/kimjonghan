@@ -1,6 +1,6 @@
-import { AppLogo } from "@/feature/prefix-logo/ui";
 import { Separator } from "@/shared/shadcn-ui/components/ui/separator";
 import { ResponsiveWrapper } from "@/shared/ui";
+import { AppLogo } from "./app-logo";
 import NavBar from "./nav-bar";
 import TopBanner from "./top-banner";
 import { TOP_BANNER_TEXT } from "../config";
