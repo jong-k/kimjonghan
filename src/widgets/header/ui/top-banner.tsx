@@ -11,7 +11,7 @@ export default function TopBanner({
   backgroundColorClassname = "bg-[linear-gradient(114.41deg,#0ae448_20.74%,#abff84_65.5%)]",
 }: TopBannerProps) {
   return (
-    <section className={cn("flex h-top-banner w-full items-center justify-center", backgroundColorClassname)}>
+    <section className={cn("hidden h-top-banner w-full items-center justify-center sm:flex", backgroundColorClassname)}>
       <Megaphone size="20" className="mr-2 inline-block" />
       <span className="text-sm">{text}</span>
     </section>
