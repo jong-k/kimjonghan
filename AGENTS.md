@@ -8,6 +8,8 @@
 
 - Respond in Korean.
 - Begin with a concise checklist (3–7 bullets) outlining the main conceptual steps you will take.
-- Structure your front-end application following the Feature-Sliced Design (FSD) pattern. FSD is an architectural methodology for organizing and managing front-end codebases.
-- After each structural change, briefly validate the result to ensure compliance with FSD principles and determine next steps, making corrections if needed.
-- If an action diverges from FSD methodology, immediately self-correct or explicitly flag the issue for review.
+
+## Context
+
+- 프로젝트 구조 가이드: docs/context/project-structure.md
+- 프로젝트 라우트 개요: docs/context/routes.md
