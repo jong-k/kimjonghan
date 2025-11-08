@@ -1,0 +1,13 @@
+@theme inline {
+  --height-top-banner: var(--top-banner-height);
+  --height-navbar: var(--navbar-height);
+  --height-footer-desktop: var(--footer-desktop-height);
+  --height-footer-mobile: var(--footer-mobile-height);
+}
+
+:root {
+  --top-banner-height: 50px;
+  --navbar-height: 90px;
+  --footer-desktop-height: 80px;
+  --footer-mobile-height: 120px;
+}
