@@ -32,7 +32,7 @@ export default function Home() {
   const remove = () => removeTweenRef.current?.play();
   const remove2 = () => {
     const el = box2Ref.current;
-    gsap.set(el, { opacity: 0, ease: "bounce.out", duration: 1 });
+    gsap.set(el, { opacity: 0 });
   };
 
   return (
