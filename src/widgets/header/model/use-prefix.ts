@@ -1,18 +1,14 @@
 import { useEffect, useState } from "react";
+import type { Prefix } from "./types";
 import { PREFIX_GROUPS } from "../config";
 import { pickRandomItem } from "../lib";
 
-interface Prefix {
-  namePrefix: string;
-  categoryPrefix: string;
-}
-
 const DEFAULT_PREFIX = Object.freeze({
-  namePrefix: "",
-  categoryPrefix: "",
+  name: "",
+  title: "",
 });
 
-export const usePrefixLogo = () => {
+export const usePrefix = () => {
   const [prefix, setPrefix] = useState<Prefix>(DEFAULT_PREFIX);
   const [hasPrefix, setHasPrefix] = useState(false);
 
@@ -26,17 +22,17 @@ export const usePrefixLogo = () => {
     setHasPrefix(true);
     const chosenPrefixes = pickRandomItem(PREFIX_GROUPS);
 
-    if (chosenPrefixes.title === "name") {
-      const namePrefix = pickRandomItem(chosenPrefixes.value);
-      setPrefix({ ...DEFAULT_PREFIX, namePrefix });
-    } else if (chosenPrefixes.title === "category") {
-      const categoryPrefix = pickRandomItem(chosenPrefixes.value);
-      setPrefix({ ...DEFAULT_PREFIX, categoryPrefix });
+    if (chosenPrefixes.category === "name") {
+      const name = pickRandomItem(chosenPrefixes.value);
+      setPrefix({ ...DEFAULT_PREFIX, name });
+    } else if (chosenPrefixes.category === "title") {
+      const title = pickRandomItem(chosenPrefixes.value);
+      setPrefix({ ...DEFAULT_PREFIX, title });
     }
   };
 
   useEffect(() => {
-    if (prefix.namePrefix === "" && prefix.categoryPrefix === "") return;
+    if (prefix.name === "" && prefix.title === "") return;
     const timer = setTimeout(() => {
       resetPrefix();
     }, 1250);
