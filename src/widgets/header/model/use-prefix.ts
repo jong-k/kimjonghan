@@ -10,16 +10,10 @@ const DEFAULT_PREFIX = Object.freeze({
 
 export const usePrefix = () => {
   const [prefix, setPrefix] = useState<Prefix>(DEFAULT_PREFIX);
-  const [hasPrefix, setHasPrefix] = useState(false);
-
-  const resetPrefix = () => {
-    setPrefix(DEFAULT_PREFIX);
-    setHasPrefix(false);
-  };
 
   const generatePrefix = () => {
-    if (hasPrefix) return;
-    setHasPrefix(true);
+    if (prefix.name !== "" || prefix.title !== "") return;
+
     const chosenPrefixes = pickRandomItem(PREFIX_GROUPS);
 
     if (chosenPrefixes.category === "name") {
@@ -34,10 +28,10 @@ export const usePrefix = () => {
   useEffect(() => {
     if (prefix.name === "" && prefix.title === "") return;
     const timer = setTimeout(() => {
-      resetPrefix();
+      setPrefix(DEFAULT_PREFIX);
     }, 1250);
     return () => clearTimeout(timer);
   }, [prefix]);
 
-  return { prefix, generatePrefix, resetPrefix };
+  return { prefix, generatePrefix };
 };
