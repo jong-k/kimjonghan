@@ -32,6 +32,7 @@ const eslintConfig = defineConfig([
   {
     rules: {
       "unicorn/prevent-abbreviations": "off",
+      "unicorn/no-array-for-each": "off",
     },
   },
   globalIgnores([".next/**", "out/**", "build/**", "next-env.d.ts"]),
