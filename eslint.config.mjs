@@ -10,30 +10,30 @@ import { configs as tsconfigs } from "typescript-eslint";
 import js from "@eslint/js";
 
 const eslintConfig = defineConfig([
-  ...nextVitals,
-  ...nextTs,
+  importX.flatConfigs.react,
+  importX.flatConfigs.typescript,
+  js.configs.recommended,
   {
-    extends: ["js/recommended"],
     files: ["**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
     ignores: ["src/middleware.ts", "src/app/**/route.ts"],
     languageOptions: { globals: globals.browser },
-    plugins: { js },
     rules: {
       "no-console": "warn",
     },
   },
   { files: ["src/middleware.ts", "src/app/**/route.ts"], languageOptions: { globals: globals.node } },
-  importX.flatConfigs.react,
-  importX.flatConfigs.typescript,
+  ...tsconfigs.recommended,
+  ...nextVitals,
+  ...nextTs,
   pluginUnicorn.configs.recommended,
   sonarConfigs.recommended,
-  ...tsconfigs.recommended,
-  eslintPluginPrettierRecommended,
   {
     rules: {
       "unicorn/prevent-abbreviations": "off",
+      "unicorn/no-array-for-each": "off",
     },
   },
+  eslintPluginPrettierRecommended,
   globalIgnores([".next/**", "out/**", "build/**", "next-env.d.ts"]),
 ]);
 
