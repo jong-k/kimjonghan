@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { isReducedMotionPreferred } from "@/shared/lib";
 import type { Prefix } from "./types";
 import { PREFIX_GROUPS } from "../config";
 import { pickRandomItem } from "../lib";
@@ -12,6 +13,7 @@ export const usePrefix = () => {
   const [prefix, setPrefix] = useState<Prefix>(DEFAULT_PREFIX);
 
   const generatePrefix = () => {
+    if (isReducedMotionPreferred()) return;
     if (prefix.name !== "" || prefix.title !== "") return;
 
     const chosenPrefixes = pickRandomItem(PREFIX_GROUPS);
