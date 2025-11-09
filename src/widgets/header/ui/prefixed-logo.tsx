@@ -5,17 +5,20 @@ import { cn } from "@/shared/shadcn-ui/lib/utils";
 import { usePrefix, usePrefixAnimation } from "../model";
 
 export default function PrefixedLogo() {
-  const { prefix, generatePrefix } = usePrefix();
-
+  const scopeRef = useRef<HTMLDivElement>(null);
   const nameRef = useRef<HTMLSpanElement>(null);
   const titleRef = useRef<HTMLSpanElement>(null);
-  const scope = useRef<HTMLDivElement>(null);
 
-  // 애니메이션 훅으로 분리
-  usePrefixAnimation(prefix, { nameRef, titleRef, scope });
+  const { prefix, generatePrefix } = usePrefix();
+
+  usePrefixAnimation(prefix, { scopeRef, nameRef, titleRef });
 
   return (
-    <div ref={scope} className="overflow-visible bg-red-100 p-1 text-2xl" onMouseEnter={generatePrefix}>
+    <div
+      ref={scopeRef}
+      className="overflow-visible p-1 text-3xl font-bold text-neutral-100 select-none"
+      onMouseEnter={generatePrefix}
+    >
       <span ref={nameRef} className={cn("inline-block will-change-transform", { "mr-2": prefix.name })}>
         {prefix.name}
       </span>
