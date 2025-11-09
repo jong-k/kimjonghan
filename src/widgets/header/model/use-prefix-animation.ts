@@ -11,20 +11,26 @@ interface AnimationRefs {
   titleRef: RefObject<HTMLElement>;
 }
 
+const DROP_DURATION = 0.3;
+const BOUNCE_DOWN_DURATION = 0.08;
+const BOUNCE_UP_DURATION = 0.12;
+const HIDE_DELAY = 1;
+const HIDE_DURATION = 0.22;
+
 const animatePrefix = (el: HTMLElement, shouldShow: boolean) => {
   if (shouldShow) {
     const tl = gsap.timeline();
-    tl.fromTo(el, { opacity: 0, y: -50, scaleY: 1 }, { opacity: 1, y: 0, duration: 0.3, ease: "power3.in" })
+    tl.fromTo(el, { opacity: 0, y: -50, scaleY: 1 }, { opacity: 1, y: 0, duration: DROP_DURATION, ease: "power3.in" })
       .to(el, {
         y: 4,
         scaleY: 0.75,
-        duration: 0.08,
+        duration: BOUNCE_DOWN_DURATION,
         ease: "power1.inOut",
       })
-      .to(el, { y: 0, scaleY: 1, duration: 0.12, ease: "power1.out" });
+      .to(el, { y: 0, scaleY: 1, duration: BOUNCE_UP_DURATION, ease: "power1.out" });
 
-    gsap.delayedCall(1, () => {
-      gsap.to(el, { opacity: 0, y: -20, duration: 0.22, ease: "power2.in" });
+    gsap.delayedCall(HIDE_DELAY, () => {
+      gsap.to(el, { opacity: 0, y: -20, duration: HIDE_DURATION, ease: "power2.in" });
     });
   } else {
     gsap.set(el, { opacity: 0 });
